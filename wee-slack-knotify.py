@@ -602,7 +602,7 @@ def escape_slashes(message):
 
 
 def send_notification(notification):
-    knotify.event("warning", "kde", [], notification.source, notification.message, [], [], 0, 0, dbus_interface="org.kde.KNotify")
+    knotify.event("warning", "kde", [], notification.source + time.strftime(' %H:%M', time.gmtime()), notification.message, [], [], 0, 0, dbus_interface="org.kde.KNotify")
 
 if __name__ == '__main__':
     # Registration.
