@@ -209,6 +209,9 @@ def message_printed_callback(data, buffer, date, tags, is_displayed,
     if message == "getting channel history...":
         return weechat.WEECHAT_RC_OK
 
+    if buffer == weechat.current_buffer():
+        return weechat.WEECHAT_RC_OK
+
     tags = parse_tags(tags)
     nick = nick_that_sent_message(tags, prefix)
 
