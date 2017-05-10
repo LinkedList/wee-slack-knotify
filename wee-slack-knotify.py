@@ -168,7 +168,6 @@ def nick_that_sent_message(tags, prefix):
     """Returns a nick that sent the message based on the given data passed to
     the callback.
     """
-    print(tags)
     # 'tags' is a comma-separated list of tags that WeeChat passed to the
     # callback. It should contain a tag of the following form: nick_XYZ, where
     # XYZ is the nick that sent the message.
@@ -249,7 +248,6 @@ def notification_should_be_sent_disregarding_time(buffer, tags, nick,
         # A nick is required to form a correct notification source/message.
         return False
 
-    print(nick + names_for_buffer(buffer)[0] + str(i_am_author_of_message(buffer, nick)))
     if i_am_author_of_message(buffer, nick):
         return False
 
